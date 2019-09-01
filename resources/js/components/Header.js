@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Link, Route} from "react-router-dom";
+import {Link, Route, Switch} from "react-router-dom";
+import Error404 from "./Error404";
 import Home from "./Home";
 import About from "./About";
 import Categories from './categories/Index';
@@ -30,12 +31,15 @@ export default class Header extends Component {
                 </nav>
                 <div className="row">
                     <div className="col-md-12">
-                        <Route exact path='/' component={Home}/>
-                        <Route exact path='/about' component={About}/>
-                        <Route exact path='/category' component={Categories}/>
-                        <Route exact path='/category/add' component={Categories}/>
-                        <Route exact path='/category/edit/:id' component={Categories}/>
-                       </div>
+                       <Switch>
+                           <Route exact path='/' component={Home}/>
+                           <Route exact path='/about' component={About}/>
+                           <Route exact path='/category' component={Categories}/>
+                           <Route exact path='/category/add' component={Categories}/>
+                           <Route exact path='/category/edit/:id' component={Categories}/>
+                           <Route exact path='/*' component={Error404}/>
+                       </Switch>
+                    </div>
                 </div>
             </div>
         )
