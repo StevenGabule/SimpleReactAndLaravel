@@ -36,8 +36,8 @@ export default class Add extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
-                {this.state.alert_message === "success" ? <SuccessAlert /> : null}
-                {this.state.alert_message === "error" ? <ErrorAlert /> : null}
+                {this.state.alert_message === "success" ? <SuccessAlert message={"Category add successfully."} /> : null}
+                {this.state.alert_message === "error" ? <ErrorAlert message={"Error occurred while adding the category."} /> : null}
                 <div className="form-group">
                     <label htmlFor="category_name">Category name</label>
                     <input type="text" onChange={this.onChangeCategoryName} className='form-control' id="category_name" value={this.state.category_name} placeholder='Enter category' name='category_name'/>

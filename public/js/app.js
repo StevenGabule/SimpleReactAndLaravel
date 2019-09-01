@@ -70566,7 +70566,11 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.onSubmit
-      }, this.state.alert_message === "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_1__["default"], null) : null, this.state.alert_message === "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_2__["default"], null) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.alert_message === "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        message: "Category add successfully."
+      }) : null, this.state.alert_message === "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        message: "Error occurred while adding the category."
+      }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "category_name"
@@ -70693,7 +70697,11 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.onSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.state.alert_message === "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_2__["default"], null) : null, this.state.alert_message === "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_3__["default"], null) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.state.alert_message === "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        message: "Category updated successfully."
+      }) : null, this.state.alert_message === "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        message: "Error occurred while updating the category."
+      }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "category_name"
@@ -70756,10 +70764,10 @@ var ErrorAlert =
 function (_Component) {
   _inherits(ErrorAlert, _Component);
 
-  function ErrorAlert() {
+  function ErrorAlert(props) {
     _classCallCheck(this, ErrorAlert);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ErrorAlert).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(ErrorAlert).call(this, props));
   }
 
   _createClass(ErrorAlert, [{
@@ -70768,7 +70776,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-danger",
         role: "alert"
-      }, "Failed operation, Please try again!");
+      }, this.props.message);
     }
   }]);
 
@@ -70997,7 +71005,11 @@ function (_Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mt-4"
-      }, this.state.alert_message === "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_4__["default"], null) : null, this.state.alert_message === "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_5__["default"], null) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      }, this.state.alert_message === "success" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SuccessAlert__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        message: "Category deleted successfully."
+      }) : null, this.state.alert_message === "error" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorAlert__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        message: "Error occurred while deleting the category."
+      }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "table"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         scope: "col"
@@ -71078,10 +71090,10 @@ var SuccessAlert =
 function (_Component) {
   _inherits(SuccessAlert, _Component);
 
-  function SuccessAlert() {
+  function SuccessAlert(props) {
     _classCallCheck(this, SuccessAlert);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SuccessAlert).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(SuccessAlert).call(this, props));
   }
 
   _createClass(SuccessAlert, [{
@@ -71090,7 +71102,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "alert alert-success",
         role: "alert"
-      }, "Record has been created/updated successfully");
+      }, this.props.message);
     }
   }]);
 

@@ -63,8 +63,8 @@ export default class Listing extends Component {
 
     render() {
         return (<div className='mt-4'>
-            {this.state.alert_message === "success" ? <SuccessAlert /> : null}
-            {this.state.alert_message === "error" ? <ErrorAlert /> : null}
+            {this.state.alert_message === "success" ? <SuccessAlert message={"Category deleted successfully."} /> : null}
+            {this.state.alert_message === "error" ? <ErrorAlert message={"Error occurred while deleting the category."} /> : null}
             <table className="table">
                 <thead>
                 <tr>

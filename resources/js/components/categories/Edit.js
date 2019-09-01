@@ -44,8 +44,8 @@ export default class Edit extends Component {
         return (
             <form onSubmit={this.onSubmit}>
                 <hr/>
-                {this.state.alert_message === "success" ? <SuccessAlert /> : null}
-                {this.state.alert_message === "error" ? <ErrorAlert /> : null}
+                {this.state.alert_message === "success" ? <SuccessAlert message={"Category updated successfully."} /> : null}
+                {this.state.alert_message === "error" ? <ErrorAlert message={"Error occurred while updating the category."} /> : null}
                 <div className="form-group">
                     <label htmlFor="category_name">Category name</label>
                     <input type="text" onChange={this.onChangeCategoryName} className='form-control' id="category_name" value={this.state.category_name} placeholder='Enter category' name='category_name'/>
