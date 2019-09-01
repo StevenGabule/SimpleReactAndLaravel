@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
 import Pagination from "react-js-pagination";
+import SuccessAlert from "./SuccessAlert";
+import ErrorAlert from "./ErrorAlert";
 
 export default class Listing extends Component {
 
@@ -9,6 +11,7 @@ export default class Listing extends Component {
         super();
         this.state = {
             categories: [],
+            alert_message: '',
             activePage:1,
             itemsCountPerPage:1,
             totalItemsCount: 1,
@@ -52,11 +55,16 @@ export default class Listing extends Component {
                    });
                }
            }
+           this.setState({alert_message: 'success'})
+        }).catch(error => {
+            this.setState({alert_message: 'danger'})
         });
     }
 
     render() {
         return (<div className='mt-4'>
+            {this.state.alert_message === "success" ? <SuccessAlert /> : null}
+            {this.state.alert_message === "error" ? <ErrorAlert /> : null}
             <table className="table">
                 <thead>
                 <tr>
